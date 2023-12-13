@@ -109,7 +109,11 @@ Eigenvectors:eivects(mat)[2];
 P:determinant(addrow(matrix(Eigenvectors[1][1]),matrix(Eigenvectors[2][1]),matrix(Eigenvectors[2][2]),matrix(Eigenvectors[3][1])));
 if P = 0 then("given matrix is not diagonalizable")
 else ("given matrix is diagonalizable");
-sol:-mat^^3+19*mat^^2-57*mat-9*ident(3);
+is_zero_matrix: is(equal(char_poly_matrix, matrix([0, 0, 0, 0], [0, 0, 0, 0],[0, 0, 0, 0],[0, 0, 0, 0])));
+if is_zero_matrix = true then
+    print("It verifies Cayley-Hamilton theorem");
+else
+    print("It does not verify Cayley-Hamilton theorem");
 
 
 /*10. Application of Linear algebra: Coding and decoding of messages using nonsingular matrices.   then decode it. */
